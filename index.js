@@ -1,12 +1,12 @@
-import express from "express";
-import serverless from "serverless-http";
+import express from 'express';
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.send("Hello from Express on Lambda!");
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
 });
-app.get("/health", (req, res) => {
-    res.send("Hello health");
+
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
-export const handler = serverless(app);
